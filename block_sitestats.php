@@ -105,7 +105,7 @@ class block_sitestats extends block_base {
         $this->content->text .= html_writer::start_tag('div', array('class' => 'text-center'));
         $this->content->text .= html_writer::tag('h2', 'Site Statistics');
 
-        $this->content->text .= '<hr class="star-light">';
+        $this->content->text .= '<hr class="star-primary">';
         $this->content->text .= html_writer::end_tag('div');
         $this->content->text .= $renderer->statistics($this->config);
         $this->content->text .= html_writer::end_tag('div');
