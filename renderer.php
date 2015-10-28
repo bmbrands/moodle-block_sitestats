@@ -32,7 +32,7 @@ class block_sitestats_renderer extends plugin_renderer_base {
         $output = '
         <div class="statistics">
             <div id="pie-charts" class="row ">
-                <div class=" col-sm-4">
+                <div class="m-b-20 col-sm-4">
                     <div class="clearfix"></div>
                     <div class="text-center ">
                         <div class="easy-pie main-pie p-b-25" >
@@ -44,7 +44,7 @@ class block_sitestats_renderer extends plugin_renderer_base {
                     </div>
                 </div>
 
-                <div class=" col-sm-4">
+                <div class="m-b-20 col-sm-4">
                     <div class="clearfix"></div>
                     <div class="text-center">
                         <div class="easy-pie main-pie p-b-25" >
@@ -55,7 +55,7 @@ class block_sitestats_renderer extends plugin_renderer_base {
                     </div>
                 </div>
 
-                <div class=" col-sm-4">
+                <div class="m-b-20 col-sm-4">
                     <div class="clearfix"></div>
                     <div class="text-center">
                         <div class="easy-pie main-pie p-b-25" >

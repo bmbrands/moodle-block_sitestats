@@ -30,3 +30,4 @@ $string['sitestatsbackgroundcolor'] = 'Block background color';
 $string['viewcount'] = 'Number of Views';
 $string['questioncount'] = 'Number of Questions';
 $string['videocount'] = 'Number of Videos';
+$string['header'] = 'Our World';

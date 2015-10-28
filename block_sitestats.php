@@ -82,13 +82,14 @@ class block_sitestats extends block_base {
             return $this->content;
         }
 
-        if ($this->config->videocount == '') {
-            $config->videocount = 10;
-            $config->viewcount = 15;
-            $config->questioncount = count($DB->get_records('question'));
-        }
-        $this->config->questioncount = count($DB->get_records('question'));
+        $this->config->questioncount += count($DB->get_records('question'));
+        
+        $videos = count($DB->get_records('webvideo_store'));
+        $this->config->videocount += $videos;
 
+        $sql = "SELECT sum(viewcount) as views FROM {webvideo_views}";
+        $totalviews = $DB->get_record_sql($sql);
+        $this->config->viewcount += $totalviews->views;
 
         // Create empty content.
         $this->content = new stdClass();
@@ -103,7 +104,7 @@ class block_sitestats extends block_base {
         $renderer = $this->page->get_renderer('block_sitestats');
         $this->content->text .= html_writer::start_tag('div', array('class' => 'container-fluid'));
         $this->content->text .= html_writer::start_tag('div', array('class' => 'text-center'));
-        $this->content->text .= html_writer::tag('h2', 'Site Statistics');
+        $this->content->text .= html_writer::tag('h2', get_string('header', 'block_sitestats'));
 
         $this->content->text .= '<hr class="star-primary">';
         $this->content->text .= html_writer::end_tag('div');
